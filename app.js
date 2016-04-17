@@ -4,8 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var EventEmitter = require('events').EventEmitter;
-var util = require('util');
 
 
 var index = require('./routes/index');
@@ -13,17 +11,10 @@ var remote = require('./routes/remote');
 
 var app = express();
 
-function myEmitter(){
-  EventEmitter.call(this);
-}
-
-util.inherits(myEmitter, EventEmitter);
-
-const testEmitter = new myEmitter();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -37,16 +28,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/remote', remote);
 
-app.post('/testemit', function(req, res){
-  res.end("yes");
-  console.log('post received');
-  testEmitter.emit('hello');
-  return;
-});
 
-testEmitter.on('hello', () => {
-  console.log('hello?');
-});
+
+
+
+
+
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

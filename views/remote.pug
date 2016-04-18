@@ -9,10 +9,9 @@ html
 		script(src="/scripts/main.js")
 
 		link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/css/normalize.css")
+		link(rel="stylesheet", href="/css/style.css")
 	body
 		div.row
-			div.col-md-6
-				p test1
-			div.col-md-6
-				p test2
-				button(type="button").btn.btn-primary#testButton testbutton
+			input(placeholder="Search")#ytSearch.form-control
+		div#results

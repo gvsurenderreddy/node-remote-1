@@ -9,13 +9,8 @@ module.exports = function (io) {
 
 	});
 
-	// setInterval( function() {
+	//   io.emit('event', data);
 
-	//   var msg = Math.random();
-	//   io.emit('number', msg);
-	//   console.log (msg);
-
-	// }, 10000);
 
 
 }

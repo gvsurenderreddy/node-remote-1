@@ -4,12 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var YouTube = require('youtube-node');
 
 
 var index = require('./routes/index');
 var remote = require('./routes/remote');
 
 var app = express();
+
+var youtube = new YouTube();
+youtube.setKey('AIzaSyDpdqvK_Pf5L5hyn0AFxvABPMoyKXgEGRs');
+
+
 
 
 // view engine setup
@@ -30,8 +36,23 @@ app.use('/remote', remote);
 
 
 
+app.post('/ytsearch', function(req, res){
+  if(req.body.vidTerm){
 
 
+    youtube.search("donk", 5, function(err,results){
+      if(err){
+        console.log(err);
+      }else{
+        res.send(results);
+      }
+    });
+
+
+
+    return;
+  }
+});
 
 
 

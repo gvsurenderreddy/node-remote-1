@@ -5,6 +5,7 @@ module.exports = function (io) {
 
 		socket.on("test", function(data){
 			console.log(data);
+			io.emit("test2", "test2data");
 		});
 
 	});

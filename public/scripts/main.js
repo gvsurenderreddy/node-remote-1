@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var doneTypingInterval = 1500;  
 	var $input = $('#ytSearch');
 
-	var searchUrl = 'http://192.168.1.103:3000/ytsearch';
+	var searchUrl = 'http://localhost:3000/ytsearch';
 
 	socket.on('number', function(data){
 		console.log(data);
@@ -31,7 +31,9 @@ $(document).ready(function(){
 	}
 
 	
-
+	$('#testBtn').on('click', function(){
+		socket.emit("test", "test");
+	});
 
 
 

@@ -49,7 +49,7 @@ app.post('/ytsearch', function(req, res){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-    youtube.search(req.body.vidTerm, 5, function(err,results){
+    youtube.search(req.body.vidTerm, 10, function(err,results){
       if(err){
         console.log(err);
       }else{

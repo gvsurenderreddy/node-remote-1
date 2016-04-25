@@ -10,10 +10,6 @@ $(document).ready(function(){
 
 	var searchUrl = url + '/ytsearch';
 
-	socket.on('number', function(data){
-		console.log(data);
-	});
-
 	$input.on('keydown', function () {
 	  clearTimeout(typingTimer);
 	  typingTimer = setTimeout(doneTyping, doneTypingInterval);
@@ -32,11 +28,6 @@ $(document).ready(function(){
 	  	}
 	  });
 	}
-
-	
-	$('#testBtn').on('click', function(){
-		socket.emit("test", "test");
-	});
 
 	$('#results').on('click', '.result', function(){
 		socket.emit("play", $(this).data('vidid'));

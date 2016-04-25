@@ -11,8 +11,6 @@ router.get('/', function(req, res, next) {
 
 	weather.find({search: config.zip, degreeType: 'F'}, function(err, result) {
 	  if(err){res.render('index', { title: 'Express' });}
-	 
-	  //console.log(JSON.stringify(result, null, 2));
 
 	  res.render('index', { "cityName": result[0].location.name, "cityTemp": result[0].current.temperature, "cityImg": result[0].current.imageUrl });
 	  

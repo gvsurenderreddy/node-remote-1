@@ -10,7 +10,7 @@ var config = JSON.parse(fs.readFileSync(__dirname+'/../config.json', 'UTF-8'));
 router.get('/', function(req, res, next) {
 
 	weather.find({search: config.zip, degreeType: 'F'}, function(err, result) {
-	  if(err){res.render('index', { title: 'Express' });}
+	  if(err){res.send("There was an error");}
 
 	  res.render('index', { "cityName": result[0].location.name, "cityTemp": result[0].current.temperature, "cityImg": result[0].current.imageUrl });
 	  

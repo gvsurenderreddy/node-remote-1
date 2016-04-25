@@ -6,7 +6,7 @@ public/css/*.css
 !public/css/normalize.css
 
 #config file
-lib/config.json
+config.json
 
 #todo file
 blog.todo

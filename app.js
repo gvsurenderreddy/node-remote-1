@@ -12,8 +12,14 @@ var remote = require('./routes/remote');
 
 var app = express();
 
+
+//read config
+var fs = require('fs');
+var config = JSON.parse(fs.readFileSync(__dirname+'/config.json', 'UTF-8'));
+
 var youtube = new YouTube();
-youtube.setKey('AIzaSyDpdqvK_Pf5L5hyn0AFxvABPMoyKXgEGRs');
+youtube.setKey(config.youtubeKey);
+youtube.addParam('type', 'video');
 
 
 

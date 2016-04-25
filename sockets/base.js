@@ -8,6 +8,11 @@ module.exports = function (io) {
 			io.emit("test2", "test2data");
 		});
 
+		socket.on('play', function(data){
+			console.log("play video id " + data);
+			io.emit("play", data);
+		});
+
 	});
 
 	//   io.emit('event', data);

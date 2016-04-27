@@ -6,11 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var YouTube = require('youtube-node');
 
-
 var index = require('./routes/index');
 var remote = require('./routes/remote');
 
 var app = express();
+
 
 
 //read config

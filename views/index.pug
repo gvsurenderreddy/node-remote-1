@@ -3,10 +3,39 @@ html
   head
     title= title
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
-    script(src="https://cdn.socket.io/socket.io-1.4.5.js")
-    script(src="/scripts/main.js")
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/indexstyle.css')
   body
-      h1= "Current Temp: " + cityTemp + "F in " + cityName
-      img(src=cityImg)
-      p= "Running on " + lanIP
+    div#wrap
+      div#main
+        div#weathercontainer
+          div#weatherheader
+            small#weather="Weather"
+            hr
+            small#city=cityName
+          div#currentblock
+            h1#current="Current"
+              img#image2(src=cityImg)
+              span#currentTemp=cityTemp + "°F"
+            ul#otherInfo
+              li#feelsLike="Feels Like: " + feelsLike + "°F"
+              li#Wind="Wind: " + wind
+              li#humidity="Humidity: " + humidity
+          div#forecastblock
+            h1#forecast="Forecast"
+            ul#day2List
+              em.forecastHeading=day2
+              li#day2Low="Low: " + day2Low + "°F"
+              li#day2High="High: " + day2High + "°F"
+              li#day2Precip="Precipitation: " + day2Precip + "%"
+            ul#day3List
+              em.forecastHeading=day3
+              li#day3Low="Low: " + day3Low + "°F"
+              li#day3High="High: " + day3High + "°F"
+              li#day3Precip="Precipitation: " + day3Precip + "%"
+            ul#day4List
+              em.forecastHeading=day4
+              li#day4Low="Low: " + day4Low + "°F"
+              li#day4High="High: " + day4High + "°F"
+              li#day4Precip="Precipitation: " + day4Precip + "%"
+    div#footer
+      p#IP= "Running on " + lanIP

@@ -4,6 +4,7 @@ node_modules
 #compiled css
 public/css/*.css
 !public/css/normalize.css
+!public/css/indexstyle.css
 
 #config file
 config.json

@@ -26,7 +26,7 @@ var lanIP = addresses[0];
 /* GET home page. */
 router.get('/', function(req, res, next) {
  
-  weather.find({search: 'Whitewater, WI', degreeType: 'F'}, function (err, result) {
+  weather.find({search: config.location, degreeType: 'F'}, function (err, result) {
     if (err) {
       res.send("There was an error");
     }

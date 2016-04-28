@@ -1,4 +1,5 @@
 {
 	"youtubeKey": "",
-	"zip": ""
+	//ex. zip code, "San Francisco, CA", etc
+	"location": ""
 }
